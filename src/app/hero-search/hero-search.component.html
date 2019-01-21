@@ -1,0 +1,29 @@
+<div>
+  <label>Name:
+      <input #searchBox type="text">
+  </label>
+  <button (click)="search(searchBox.value)">Search</button>
+ 
+</div>
+
+<button (click)="getList()">getList Test function</button>
+
+<div *ngIf="heroListFound">
+  <span>HeroList Found</span>
+</div>
+
+
+<div *ngIf="heroFound">
+    <span>Hero Found</span>
+  </div>
+<!-- <div>
+  <input #searchBox1 id="search-box" (input)="search1(searchBox1.value)" />
+ 
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div> -->

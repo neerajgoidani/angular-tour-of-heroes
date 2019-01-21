@@ -1,0 +1,50 @@
+<!-- <div>
+  <ul >
+    <li [class.selected]="Hero === selectedHero" *ngFor="let Hero of heroList" (click) = "onClick(Hero)" >
+       === means 'identical to'
+      <span class="badge">{{Hero.id}}</span> {{Hero.name}}
+     
+    </li>
+  </ul>
+</div> -->
+
+<ul>
+  <li *ngFor="let hero of heroList">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button (click)= "deleteHero(hero)">Delete Hero</button>
+  </li>
+</ul>
+
+<div>
+  
+  <label>New Hero:
+    <input type="text" #newHero>
+  </label>
+
+  <button (click)= "addHero(newHero.value); newHero.value='' ">Add Hero</button>
+</div>
+
+
+
+
+
+
+
+<!--
+<app-hero-details [hero]="selectedHero"></app-hero-details>
+-->
+
+<!--
+  <app-hero-details></app-hero-details> 
+  this is to invoke the hero-details component
+  
+  but here we also perform parameter binding. 
+  [hero]="selectedHero"
+  now 'selectedHero' is a property of heroes.component.ts
+   AND
+   the 'hero' in [] is a property of hero-details.component.ts
+   this is possible coz of the @Input notation
+
+-->
